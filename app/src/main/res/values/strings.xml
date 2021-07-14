@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">authentication</string>
+    <string name="let_s_get_started">Let\'s Get Started</string>
+    <string name="setup">Continue</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="setup_mpin">Enter MPIN</string>
+    <string name="_000000">000000</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="login_page">Login Page</string>
+    <string name="signup_form">Signup Form</string>
+    <string name="enter_mpin">Enter MPIN</string>
+    <string name="confirm_mpin">Confirm MPIN</string>
+    <string name="_123456">123456</string>
+    <string name="create_mpin">Create MPIN</string>
+    <string name="logout">Logout</string>
+    <string name="change_mpin">change MPIN</string>
+</resources>
