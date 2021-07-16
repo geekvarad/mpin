@@ -30,4 +30,5 @@
     <string name="create_mpin">Create MPIN</string>
     <string name="logout">Logout</string>
     <string name="change_mpin">change MPIN</string>
+    <string name="fingerprint_login">Fingerprint Login</string>
 </resources>
