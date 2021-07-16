@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "mpin")
 data class table(
     @PrimaryKey(autoGenerate = true)
-    var mpin:String
+    val id:Long,
+    val mpin:String
 )

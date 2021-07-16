@@ -1,16 +1,21 @@
 package com.example.authentication.data
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+
+import androidx.room.*
 
 @Dao
 interface database_handler {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun setMpin(mpin:String){
+    suspend fun setMpin(input:table)
 
-    }
+    @Update
+    suspend fun update(input:table)
+
+    @Query("DELETE FROM mpin")
+    suspend fun delete()
+
+    @Query("SELECT * FROM mpin")
+    suspend fun get() : List<table>
 
 }
