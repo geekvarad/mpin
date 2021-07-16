@@ -12,13 +12,16 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.authentication.data.db
 import kotlinx.android.synthetic.main.fragment_login.*
+import java.security.MessageDigest
+import java.util.*
 
 class Login : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         button_login.setOnClickListener {
-            if((mpin.text.toString())== db.mpin)
+            val md= MessageDigest.getInstance("SHA-256")
+            if(Base64.getEncoder().encodeToString(md.digest(mpin.text.toString().encodeToByteArray()))== db.mpin)
             findNavController().navigate(R.id.action_login_to_dashboard);
             else
                 Toast.makeText(context,"Invalid MPIN",Toast.LENGTH_SHORT).show()

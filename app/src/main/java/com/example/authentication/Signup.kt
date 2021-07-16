@@ -1,5 +1,6 @@
 package com.example.authentication
 
+import java.util.Base64
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +14,9 @@ import com.example.authentication.data.table
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_signup.*
 import kotlinx.coroutines.*
+import java.security.MessageDigest
 import kotlin.coroutines.CoroutineContext
-
+import org.apache.*;
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,6 +44,8 @@ class Signup : Fragment(R.layout.fragment_signup) {
             if(setup_mpin.text.toString()==confirm_mpin.text.toString() && setup_mpin.text.toString()!="")
             {
                 db.mpin=setup_mpin.text.toString();
+                val md=MessageDigest.getInstance("SHA-256")
+                db.mpin=Base64.getEncoder().encodeToString(md.digest(db.mpin.encodeToByteArray()))
                 val instance=database.getInstance(it.context)
                 val myContext: CoroutineContext = SupervisorJob() + Dispatchers.IO
                 val scope=CoroutineScope(myContext)
